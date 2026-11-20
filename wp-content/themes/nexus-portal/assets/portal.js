@@ -24,7 +24,7 @@
 					document.documentElement.classList.remove('splash-active');
 					pageElements.forEach((element) => { element.inert = false; });
 					if (restoreFocus) document.querySelector('.site-header .brand-home').focus();
-				}, 350);
+				}, 480);
 			};
 			const handleEscape = (event) => {
 				if (event.key === 'Escape') dismiss();
@@ -32,10 +32,27 @@
 			splash.hidden = false;
 			document.documentElement.classList.add('splash-active');
 			pageElements.forEach((element) => { element.inert = true; });
-			const timer = window.setTimeout(dismiss, 1850);
+			const timer = window.setTimeout(dismiss, 1820);
 			splash.querySelector('[data-splash-skip]').addEventListener('click', dismiss, { once: true });
 			document.addEventListener('keydown', handleEscape);
 		}
+	}
+
+	const form = document.querySelector('.contact-disclosure');
+	if (form) {
+		const showContact = () => {
+			if (window.location.hash === '#contact-form') form.open = true;
+		};
+		showContact();
+		window.addEventListener('hashchange', showContact);
+		document.addEventListener('click', (event) => {
+			const link = event.target.closest('a');
+			if (link?.hash === '#contact-form' && link.pathname === location.pathname && link.search === location.search) form.open = true;
+		});
+		form.querySelector('[data-contact-status]')?.focus({ preventScroll: true });
+		const submit = form.querySelector('button[type="submit"]');
+		form.addEventListener('submit', () => { submit.disabled = true; });
+		window.addEventListener('pageshow', () => { submit.disabled = false; });
 	}
 
 	const toggle = document.querySelector('.menu-toggle');

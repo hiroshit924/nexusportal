@@ -19,13 +19,18 @@ function nexus_portal_copy( string $language ): array {
 			'explore'          => 'Explore our brands',
 			'about_label'      => 'Our philosophy',
 			'about_title'      => 'A shared interest can take you further.',
-			'about_text'       => 'Through C365 and CHAIN NEXUS, we make room for people to meet and keep coming back. Our cafés, gatherings, mobility and marine experiences start with something you enjoy and give you a reason to share it.',
+			'about_paragraphs' => array(
+				'An extra chair, an unfamiliar road, a first breath underwater. The moments we remember often start with someone saying, “Want to come along?” We love what happens when a little curiosity makes the day bigger than we planned.',
+				'At C365 Cafe, it starts around a table. With VINCROSS, a film or a glass of wine gets people talking. CHAIN NEXUS puts a different set of keys in your hand. C365 CRUISE takes you out into Yokohama Harbor, EXCELLENT MARINE to the waters below Mount Fuji, and Diving Shop C365 beneath the surface. UMIMORI 365 works with small-boat operators to make time on the water safer.',
+				'It takes nerve to show up somewhere new or ask someone to come with you. At NEXUS, we build experiences through C365 and CHAIN NEXUS that make taking that first step feel worth it. We want people to leave with a reason to see each other again and a new plan already taking shape.',
+			),
+			'about_statement'  => 'Who’s coming with you next?',
 			'brands_title'     => 'Our brands',
 			'brands_lead'      => 'Find your next experience, from the city to the sea.',
 			'service_action'   => 'Visit website',
 			'contact_label'    => 'Contact',
 			'contact_title'    => 'Let’s connect',
-			'contact_text'     => 'For partnerships, business inquiries or questions about NEXUS, email our team.',
+			'contact_text'     => 'Use the form to tell us what you have in mind, whether it’s a partnership, a business inquiry or a question about NEXUS.',
 		);
 	}
 
@@ -41,13 +46,18 @@ function nexus_portal_copy( string $language ): array {
 		'explore'          => 'ブランドを見る',
 		'about_label'      => '私たちが大切にすること',
 		'about_title'      => 'つながりから、次の景色へ。',
-		'about_text'       => '株式会社NEXUSは、C365とCHAIN NEXUSを通じて、カフェ、交流イベント、モビリティ、海の事業を展開しています。共通の「好き」から、また会いたくなる関係が育つ。そんなコミュニティを、一つひとつの体験から広げていきます。',
+		'about_paragraphs' => array(
+			'初めて会う人と、好きな映画の話に夢中になる。いつもとは違うクルマで、まだ知らない道へ向かう。ほんの少し踏み出しただけで、見慣れた街まで新しく見える。私たちは、そんな瞬間をもっと増やしたいと思っています。',
+			'横浜のC365 Cafeで食卓を囲み、VINCROSSで好きなことを語る。CHAIN NEXUSのクルマで街を抜け、C365 CRUISEの船上から横浜の夜景を眺める。EXCELLENT MARINEで富士山を望む駿河湾へ、Diving Shop C365で海の中へ。海守365は、そうした海の体験を支える小型船の安全運航をサポートします。',
+			'初めての場所に出かけたり、誰かを誘ったりするには、少し勇気がいります。だから株式会社NEXUSは、C365とCHAIN NEXUSを通じて、その一歩を踏み出したくなる場をつくります。一日を一緒に過ごした人と「今度は何をしよう」と話せる。そんなふうに次の約束が生まれるところから、コミュニティは育っていくと信じています。',
+		),
+		'about_statement'  => '次は、誰と、どこへ行こう。',
 		'brands_title'     => 'Our brands',
 		'brands_lead'      => '街から海まで、次に出かけたくなる体験を。',
 		'service_action'   => 'サイトを見る',
 		'contact_label'    => 'お問い合わせ',
 		'contact_title'    => 'Let’s connect',
-		'contact_text'     => '事業連携のご相談や株式会社NEXUSへのご質問は、メールでお寄せください。',
+		'contact_text'     => '事業連携のご相談や株式会社NEXUSへのご質問は、下のフォームからお寄せください。',
 	);
 }
 

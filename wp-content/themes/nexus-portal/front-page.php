@@ -8,37 +8,9 @@ defined( 'ABSPATH' ) || exit;
 $language = nexus_portal_language();
 $copy     = nexus_portal_copy( $language );
 $projects = nexus_portal_projects( $language );
-$logos    = array(
-	'cafe'            => 'cafe.svg',
-	'vincross'        => 'vincross.svg',
-	'chain-nexus'     => 'chain-nexus.svg',
-	'cruise'          => 'cruise.png',
-	'excellentmarine' => 'excellentmarine.png',
-	'umimori'         => 'umimori.png',
-	'dive'            => 'dive.webp',
-);
-
 get_header();
+get_template_part( 'splash', null, array( 'language' => $language, 'projects' => $projects ) );
 ?>
-<div class="splash" data-splash hidden>
-	<button type="button" class="splash-skip" data-splash-skip><?php echo esc_html( 'en' === $language ? 'Skip intro' : 'イントロをスキップ' ); ?> <span class="arrow arrow-up" aria-hidden="true"></span></button>
-	<div class="splash-content">
-		<div class="splash-wordmark"><?php nexus_portal_mark(); ?></div>
-		<div class="splash-progress" aria-hidden="true"></div>
-		<ul class="splash-logos">
-			<?php foreach ( $projects as $project ) : ?>
-				<li class="splash-logo splash-logo-<?php echo esc_attr( $project['slug'] ); ?>">
-					<?php if ( in_array( $project['slug'], array( 'vincross', 'dive' ), true ) ) : ?>
-						<img src="<?php echo esc_url( nexus_portal_asset( 'logos/' . $logos[ $project['slug'] ] ) ); ?>" alt="">
-						<span><?php echo esc_html( $project['name'] ); ?></span>
-					<?php else : ?>
-						<img src="<?php echo esc_url( nexus_portal_asset( 'logos/' . $logos[ $project['slug'] ] ) ); ?>" alt="<?php echo esc_attr( $project['label'] ); ?>">
-					<?php endif; ?>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	</div>
-</div>
 
 <main id="main">
 	<section class="hero" aria-labelledby="hero-title">
@@ -56,15 +28,7 @@ get_header();
 		</div>
 	</section>
 
-	<section id="about" class="about" aria-labelledby="about-title">
-		<div class="about-inner wrap">
-			<p class="eyebrow about-eyebrow"><span class="marker" aria-hidden="true"></span><?php echo esc_html( $copy['about_label'] ); ?></p>
-			<div class="about-content">
-				<h2 id="about-title"><?php echo esc_html( $copy['about_title'] ); ?></h2>
-				<p><?php echo esc_html( $copy['about_text'] ); ?></p>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part( 'about', null, array( 'copy' => $copy ) ); ?>
 
 	<section id="brands" class="brands" aria-labelledby="brands-title">
 		<div class="wrap">
@@ -104,7 +68,7 @@ get_header();
 				<h2 id="contact-title" lang="en"><?php echo esc_html( $copy['contact_title'] ); ?><span>.</span></h2>
 				<p class="contact-description"><?php echo esc_html( $copy['contact_text'] ); ?></p>
 			</div>
-			<a class="button button-dark" href="mailto:info@c365.jp"><?php echo esc_html( $copy['nav_contact'] ); ?><span class="arrow arrow-up" aria-hidden="true"></span></a>
+			<?php get_template_part( 'contact' ); ?>
 		</div>
 	</section>
 </main>

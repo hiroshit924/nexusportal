@@ -6,6 +6,9 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once get_theme_file_path( '/inc/content.php' );
+require_once get_theme_file_path( '/inc/company.php' );
+require_once get_theme_file_path( '/inc/mail.php' );
+require_once get_theme_file_path( '/inc/contact.php' );
 
 add_action(
 	'after_setup_theme',
@@ -34,6 +37,9 @@ add_action(
 	static function (): void {
 		$version = wp_get_theme()->get( 'Version' );
 		wp_enqueue_style( 'nexus-portal', get_stylesheet_uri(), array(), $version );
+		if ( is_front_page() && ! nexus_portal_is_company() ) {
+			wp_enqueue_style( 'nexus-portal-intro', nexus_portal_asset( 'intro.css' ), array( 'nexus-portal' ), $version );
+		}
 		wp_enqueue_script( 'nexus-portal', nexus_portal_asset( 'portal.js' ), array(), $version, true );
 	}
 );
@@ -41,14 +47,14 @@ add_action(
 add_filter(
 	'pre_get_document_title',
 	static function ( string $title ): string {
-		return is_front_page() ? nexus_portal_copy( nexus_portal_language() )['title'] : $title;
+		return is_front_page() && ! nexus_portal_is_company() ? nexus_portal_copy( nexus_portal_language() )['title'] : $title;
 	}
 );
 
 add_filter(
 	'language_attributes',
 	static function ( string $attributes ): string {
-		return is_front_page() ? 'lang="' . nexus_portal_language() . '"' : $attributes;
+		return is_front_page() && ! nexus_portal_is_company() ? 'lang="' . nexus_portal_language() . '"' : $attributes;
 	}
 );
 
@@ -65,7 +71,7 @@ add_action(
 add_action(
 	'wp_head',
 	static function (): void {
-		if ( ! is_front_page() ) {
+		if ( ! is_front_page() || nexus_portal_is_company() ) {
 			return;
 		}
 
@@ -91,6 +97,6 @@ add_action(
 
 function nexus_portal_mark(): void {
 	?>
-	<img class="wordmark" src="<?php echo esc_url( nexus_portal_asset( 'logos/chain-nexus-light.svg' ) ); ?>" width="168" height="47" alt="CHAIN NEXUS">
+	<img class="wordmark" src="<?php echo esc_url( nexus_portal_asset( 'logos/nexus-light.svg' ) ); ?>" width="168" height="47" alt="NEXUS">
 	<?php
 }
