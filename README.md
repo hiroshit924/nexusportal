@@ -32,7 +32,7 @@ git archive --format=zip --prefix=nexus-portal/ --output=nexus-portal.zip HEAD:w
 
 日英の文章とサービス一覧は `wp-content/themes/nexus-portal/inc/content.php` で管理します。会社概要はテーマに含まれ、通常は `/company/`、基本パーマリンクを使用する環境などでは `/?company=1` で表示します。いずれも `lang=en` で英語版に切り替わります。会社情報はテーマの `company.php` と `inc/company.php` で管理します。
 
-初回訪問時はNEXUSのロゴから7サービスの公式ロゴへ展開します。メインロゴは従来のマークとNEXUSの文字を継承し、サービス一覧ではCHAIN NEXUSの公式ロゴを使用しています。ポータルの公開ページでは、テーマ付属のNEXUSファビコンを表示します。WordPress管理画面のサイトアイコン設定は保持されます。ヒーローには、NEXUSのロゴカラーで「つながり」を表現した幾何学アートを掲載しています。サービス紹介の写真はポータル用に生成したイメージです。
+初回訪問時はNEXUSのロゴから7サービスの公式ロゴへ展開します。メインロゴは従来のマークとNEXUSの文字を継承し、サービス一覧ではCHAIN NEXUSの公式ロゴを使用しています。ポータルの公開ページでは、テーマ付属のNEXUSファビコンを表示します。WordPress管理画面のサイトアイコン設定は保持されます。ヒーローには、NEXUSのロゴカラーで「つながり」を表現した幾何学アートを掲載しています。EXCELLENT MARINEのカードでは、Scarab 255 LX WAKEの公式写真に富士山の背景を重ねています。他のサービスの写真はポータル用に生成したイメージです。[Scarab日本公式サイトの掲載写真](https://www.scarabboats.jp/255JET/images/2025/04.webp)
 
 デザインでは、タイポグラフィを中心に据えたステートメント、体験を先に見せる構成、コンパクトなナビゲーション、ロゴが現れてからトップへ移る短いイントロを参照しました。[Bulletproof](https://www.awwwards.com/sites/bulletproof)・[Antfood](https://www.awwwards.com/sites/antfood)・[Creative Reference Library](https://www.awwwards.com/sites/creative-reference-library)・[VINCROSS](https://vincross.c365.jp/)
 

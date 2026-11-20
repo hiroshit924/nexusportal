@@ -1,7 +1,7 @@
 /*
 Theme Name: NEXUS Portal
 Description: Bilingual brand portal for NEXUS Inc.
-Version: 1.1.3
+Version: 1.1.4
 Requires at least: 6.4
 Requires PHP: 8.1
 Author: NEXUS
@@ -297,6 +297,17 @@ img { display: block; max-width: 100%; }
 	transition: transform .5s cubic-bezier(.16, 1, .3, 1);
 }
 .project-link:hover img { transform: scale(1.05); }
+.project-excellentmarine .project-image { position: relative; }
+.project-excellentmarine .project-image::after {
+	position: absolute;
+	inset: 0 0 auto;
+	height: 28%;
+	background: url("assets/images/excellentmarine-fuji.webp") center / 100% 100% no-repeat;
+	mask-image: linear-gradient(#000 86%, transparent);
+	pointer-events: none;
+	content: "";
+}
+.project-excellentmarine .project-link:hover img { transform: none; }
 
 .project-detail {
 	display: flex;
