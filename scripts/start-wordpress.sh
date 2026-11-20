@@ -13,7 +13,7 @@ if [[ ! -e .env ]]; then
 fi
 
 site_url="${NEXUS_WP_URL:-http://localhost:${NEXUS_WP_PORT:-8080}}"
-wp_cli=(docker compose run --no-deps --rm -T wpcli wp)
+wp_cli=(docker compose run --no-deps --rm -T wpcli wp "--url=$site_url")
 
 # Apache and WP-CLI both read the public theme as a non-root user.
 chmod -R a+rX wp-content/themes/nexus-portal
