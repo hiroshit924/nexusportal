@@ -121,7 +121,8 @@ function nexus_portal_projects( string $language ): array {
 				: '沼津から駿河湾へ。富士山を望む海を、貸切ジェットボートで巡ります。',
 			'url'         => 'https://excellentmarine.jp/',
 			'label'       => 'EXCELLENT MARINE',
-			'image'       => 'excellentmarine.webp',
+			'image'       => 'excellentmarine-scarab-255.webp',
+			'image_alt'   => $english ? 'Scarab 255 on Suruga Bay with Mount Fuji in the background' : '富士山を背景に駿河湾を走るScarab 255',
 		),
 		array(
 			'slug'        => 'umimori',

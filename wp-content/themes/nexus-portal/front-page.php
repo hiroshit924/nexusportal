@@ -41,7 +41,7 @@ get_template_part( 'splash', null, array( 'language' => $language, 'projects' =>
 					<article class="project project-<?php echo esc_attr( $project['slug'] ); ?>">
 						<a class="project-link" href="<?php echo esc_url( $project['url'] ); ?>">
 							<div class="project-image">
-								<img src="<?php echo esc_url( nexus_portal_asset( 'images/' . $project['image'] ) ); ?>" alt="" width="539" height="358" loading="lazy" decoding="async">
+								<img src="<?php echo esc_url( nexus_portal_asset( 'images/' . $project['image'] ) ); ?>" alt="<?php echo esc_attr( $project['image_alt'] ?? '' ); ?>" width="539" height="358" loading="lazy" decoding="async">
 							</div>
 							<div class="project-detail">
 								<div class="project-copy">
