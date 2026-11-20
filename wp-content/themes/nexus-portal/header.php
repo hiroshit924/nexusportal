@@ -18,9 +18,13 @@ $language_url = $is_company ? 'nexus_portal_company_url' : 'nexus_portal_url';
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#101011">
-	<?php if ( ! has_site_icon() ) : ?>
-		<link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url( add_query_arg( 'ver', wp_get_theme()->get( 'Version' ), nexus_portal_asset( 'icon.png' ) ) ); ?>">
-	<?php endif; ?>
+	<?php
+	// Keep the existing WordPress site icon setting for the admin and other themes.
+	remove_action( 'wp_head', 'wp_site_icon', 99 );
+	$icon_url = nexus_portal_asset( 'nexus-site-icon.png' );
+	?>
+	<link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url( $icon_url ); ?>">
+	<link rel="apple-touch-icon" href="<?php echo esc_url( $icon_url ); ?>">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
